@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const artistCard = document.createElement('div')
     artistsData.forEach(artist => {
+        const artistCard = document.createElement('div')
         artistCard.classList.add('artist-card')
 
         artistCard.innerHTML = `
