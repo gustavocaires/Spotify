@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {name: 'Henrique & Juliano', image: './img/artista-henrique-juliano.jpg'},
         {name: 'Jorge & Mateus', image: './img/artista-jorge-mateus.jpg'},
         {name: 'Zé Neto & Cristiano', image: './img/artista-ze-neto.jpg'},
-        {name: 'Gusttavo Lima', image: './img/artista-gustavo-lima.jpg'},
+        {name: 'Gusttavo Lima', image: './img/artista-gustavo-limma.jpg'},
         {name: 'Luan Santana', image: './img/artista-luan-santana.jpg'},
         {name: 'Matheus & Kauan', image: './img/artista-mateus-kauan.jpg'},
     ]
@@ -20,14 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const artistGrid = document.querySelector('.artists-grid')
     const albumsGrid = document.querySelector('.albums-grid')
 
+    const artistCard = document.createElement('div')
     artistsData.forEach(artist => {
-        const artistCard = document.createElement('div')
         artistCard.classList.add('artist-card')
 
         artistCard.innerHTML = `
             <img src= "${artist.image}" alt="imagem do ${artist.name}">
-            <h3>${artist.name}</h3>
-            <p>artista</p>
+            <div>
+                <h3>${artist.name}</h3>
+                <p>artista</p>
+            </div>
         `
 
         artistGrid.appendChild(artistCard)
@@ -39,7 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         albumCard.innerHTML = `
             <img src= "${album.image}" alt="imagem do ${album.name}">
-            <p>${album.name}</p>
+            <div>
+                <h3>${album.name}</h3>
+                <p>${album.artists}</p>
+            </div>
         `
 
         albumsGrid.appendChild(albumCard)
